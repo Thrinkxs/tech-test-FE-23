@@ -1,50 +1,73 @@
-# Tech Test Brief
+# Front-End Application for Payouts Management
+This is a front-end application developed using React and TypeScript, styled with Styled Components, to manage payouts. Users can search for payouts by username and view the details.
 
-## Overview
+## Table of Contents
 
-We are seeking a capable developer to build a front-end application using either React or Next.js, combined with TypeScript. Your choice of framework should be based on your preference and expertise. The application should closely align with the designs found in this [Figma file](https://www.figma.com/file/hGBI3zpyHia5yrWsgeMP3K/Untitled?node-id=0%3A1&mode=dev). It is essential that the application utilises Styled Components for styling.
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [API Integration](#api-integration)
 
-## Technical Requirements
 
-### General
+## Getting Started
 
-- The application must be developed using TypeScript.
-- Utilise Styled Components for styling the components in accordance with the Figma designs.
-- We often find the need to make slight alterations to the designs - please use your best judgement to make the necessary adjustments, particularly adding a column for usernames.
-- Implement a search functionality that allows for searching payouts based on various criteria, including username. Please see the API Integration section for more details, and as above tweak the designs as you see fit.
+### Prerequisites
 
-### API Integration
+Before you begin, ensure you have the following prerequisites installed:
 
-You will be integrating with an existing API. Here are the details of the endpoints you will need to interact with:
+- **Node.js**: [Download Node.js](https://nodejs.org/)
+- **npm**: This comes with Node.js, but you can also use yarn if you prefer.
+
+### Installation
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd tech-test-FE-23
+   ```
+
+3. Install project dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+1. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Open your web browser and go to [http://localhost:3000] or (http://localhost:5173) to access the application.
+
+## Project Structure
+
+- `components/`: Contains React components for various parts of the application.
+- `styles/`: Contains Styled Components styles for components.
+
+## API Integration
+
+This application integrates with two API endpoints:
 
 1. **Payouts Endpoint**
 
-   **Endpoint:** `https://theseus-staging.lithium.ventures/api/v1/analytics/tech-test/payouts`
-
-   **Method:** GET
-
-   **Description:** This endpoint retrieves a list of payouts. Each payout object contains the following fields:
-
-   - `dateAndTime`: A string representing the date and time of the payout.
-   - `status`: A string indicating the status of the payout (Pending or Completed).
-   - `value`: A string representing the value of the payout.
-   - `username`: A string representing the username associated with the payout.
+   - **Endpoint:** `https://theseus-staging.lithium.ventures/api/v1/analytics/tech-test/payouts`
+   - **Method:** GET
+   - **Description:** Retrieves a list of payouts. Each payout object contains fields like dateAndTime, status, value, and username.
 
 2. **Search Endpoint**
 
-   **Endpoint:** `https://theseus-staging.lithium.ventures/api/v1/analytics/tech-test/search?query=SEARCH_TERM`
+   - **Endpoint:** `https://theseus-staging.lithium.ventures/api/v1/analytics/tech-test/search?query=SEARCH_TERM`
+   - **Method:** GET
+   - **Description:** Allows searching for payouts by username. The application facilitates user search, optimizing the user experience.
 
-   **Method:** GET
-
-   **Description:** This endpoint allows for searching payouts by username. Implement a functionality that facilitates user search with a keen focus on optimizing the user experience whilst considering performance.
-
-## Evaluation Criteria
-
-- Adherence to the design as specified in the Figma file.
-- Proper usage of TypeScript and Styled Components.
-- Attention to detail in implementing various functionalities.
-- Optimizations implemented to enhance the user experience.
-
-## Submission
-
-Please fork this repository and submit your solution as a pull request. Please include a README file with instructions on how to run your application locally.
